@@ -1,0 +1,11 @@
+#gallery {
+  a { 
+    display: inline-block;
+    text-decoration: none
+    }
+  img {
+      margin: 27px;
+  }
+  .project-photos { display: none; }
+  .title, .fancybox-gallery {	display:none; }
+}

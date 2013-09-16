@@ -1,0 +1,24 @@
+header {
+  position: relative;
+  margin-bottom: 20px;
+  
+  span#logo {
+    text-transform: uppercase;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 350%;
+    line-height: 1em;
+    margin: .25em 0;
+    color: black;
+  }
+
+  #contact-top {
+    float:right;
+    margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+    padding: 0;
+    padding-top: 20px;
+  }
+}

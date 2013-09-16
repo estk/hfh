@@ -1,0 +1,16 @@
+Router.map(function() { 
+  this.route('home', {path: '/'});
+  this.route('projects');
+  this.route('contact');
+  this.route('history');
+  this.route('testimonials');
+});
+
+Router.configure({
+  layout: 'layout',
+
+  renderTemplates: { 
+  /* render the templated named footer to the 'header' yield */
+  'header': { to: 'header' },
+  }
+});

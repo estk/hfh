@@ -1,0 +1,10 @@
+.testimonials {
+  .testimonial {
+    #effects > .raised;
+    margin: 30px;
+  }
+  .signature {
+    font-weight: bold;
+    color: #000;
+  }
+}
