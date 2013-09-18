@@ -5,6 +5,7 @@ Template.carousel.helpers({
 });
 
 Template.carousel.rendered = function () {
+  // Get the photos
   var cb = function (err, res) {
     if (err) {
       console.log(err);

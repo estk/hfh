@@ -12,7 +12,6 @@ spiderable
 jquery
 force-ssl
 d3
-bootstrap
 fancybox
 stylus
 iron-router
@@ -22,3 +21,4 @@ less
 http
 collection-hooks
 spin
+bootstrap3-less

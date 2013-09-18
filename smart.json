@@ -5,6 +5,7 @@
     "analyticsjs": {},
     "collection-hooks": {},
     "spin": {},
-    "handlebar-helpers": {}
+    "handlebar-helpers": {},
+    "bootstrap3-less": {}
   }
 }

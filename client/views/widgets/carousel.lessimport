@@ -1,16 +1,17 @@
 .carousel {
-  width: 960px;
-  height: 500px;
+  #effects > .raised;
+  max-width: 1024px;
+  margin: auto;
+  margin-bottom: 30px;
+
+  .carousel-inner {
+  }
 
   .item {
     .carousel-caption {
       color: #FFF;
       background: none;
     }
-  }
-
-  #spinner {
-    vertical-align: middle;
   }
 }
 

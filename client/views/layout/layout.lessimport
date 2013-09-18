@@ -7,26 +7,13 @@ body {
     margin-bottom: 20px;
   }
   #content {
-    position:relative;
+    position: relative;
   }
 
-  #content img {
-    background: white;
-    padding: 10px;
-    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
-    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
-  }
-  
   article { margin-left: 20px; margin-right: 20px; }
 
   .container { 
-    text-align:left;
     background: white;
-    padding: 0 20px 20px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 960px;
+    padding-bottom: 20px;
   }
 }

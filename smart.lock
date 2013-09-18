@@ -7,7 +7,8 @@
       "analyticsjs": {},
       "collection-hooks": {},
       "spin": {},
-      "handlebar-helpers": {}
+      "handlebar-helpers": {},
+      "bootstrap3-less": {}
     },
     "packages": {
       "fancybox": {
@@ -39,6 +40,11 @@
         "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
         "tag": "v0.0.9",
         "commit": "71e94c99462b8801a34c5363510758b6ff5f5ac7"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/eprochasson/bootstrap3-less",
+        "tag": "v0.1.1",
+        "commit": "82d3e32b6a44bad7bd439b9e02ce33161e58996d"
       }
     }
   }

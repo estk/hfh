@@ -3,6 +3,10 @@
   margin-left: 20px;
   margin-right: 20px;
   display: inline-block;
+  img {
+    width: 300px;
+    #effects > .raised;
+  }
 }
 .history {
   width: 570px;
