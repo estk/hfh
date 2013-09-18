@@ -3,7 +3,7 @@
   .make-sm-column(12);
   max-width: 1024px;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 
   .spin-container {
     #spinner {

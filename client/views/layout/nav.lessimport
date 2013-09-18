@@ -1,5 +1,4 @@
 nav {
-  text-align:right;
   display: block;
 
   ul {
@@ -12,7 +11,7 @@ nav {
       .make-sm-column-push(4);
       list-style-type: none;
       font-weight: bold;
-      text-align:right;
+      text-align:center;
     }
     a {
       color: #000;

@@ -7,6 +7,8 @@ header {
   
   > .top {
     .clearfix;
+    margin-bottom: 15px;
+
     > #logo {
       .make-sm-column(6);
       text-transform: uppercase;
