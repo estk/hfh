@@ -1,13 +1,14 @@
 .sidebar {
   .make-sm-column(4);
-  text-align: center;
+  margin-bottom:20px;
   img {
     .img-responsive;
     #effects > .raised;
+    margin: auto;
   }
 }
 .history {
-  .make-sm-column(6);
+  .make-sm-column(8);
   vertical-align: top;
   display: inline-block;
 }

@@ -1,4 +1,7 @@
-#blurbs { margin: 0; }
+#blurbs { 
+  .clearfix;
+  margin: 0;
+}
 .blurb {
   .make-sm-column(4);
   vertical-align: top;

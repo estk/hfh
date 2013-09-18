@@ -1,3 +1,3 @@
 Template.header.rendered = function () {
-  $('#logo div').fitText(1.1);
+  $('#logo div').fitText(1.2);
 };

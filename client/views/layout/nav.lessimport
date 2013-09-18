@@ -3,15 +3,16 @@ nav {
   display: block;
 
   ul {
-    display:inline;
+    .make-row;
     margin-left:0;
     padding-left:0;
 
     li {
-      display:inline;
-      margin-left:10px;
-      padding-left:0px;
+      .make-sm-column(2);
+      .make-sm-column-push(4);
+      list-style-type: none;
       font-weight: bold;
+      text-align:right;
     }
     a {
       color: #000;

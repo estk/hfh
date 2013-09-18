@@ -7,12 +7,11 @@ body {
     margin-bottom: 20px;
   }
   #content {
+    .clearfix;
     position: relative;
   }
 
-  article { margin-left: 20px; margin-right: 20px; }
-
-  .container { 
+  .container {
     background: white;
     padding-bottom: 20px;
   }

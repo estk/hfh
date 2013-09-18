@@ -1,28 +1,31 @@
 header {
+  .clearfix;
   position: relative;
   margin-bottom: 20px;
   font-size: 100%;
   display: block;
   
-  > #logo {
-    .make-sm-column(6);
-    text-transform: uppercase;
-    vertical-align: middle;
-    div {
-      width: 100%;
-      color: black;
-      font-size: 100%; /* set a fall-back size */
-      text-align: center;
-      line-height: 1;
-      display: inline-block;
-      margin: auto; 
-      padding-top: 20px;
+  > .top {
+    .clearfix;
+    > #logo {
+      .make-sm-column(6);
+      text-transform: uppercase;
+      vertical-align: middle;
+      div {
+        white-space: nowrap;
+        width: 100%;
+        color: black;
+        font-size: 100%; /* set a fall-back size */
+        text-align: center;
+        line-height: 1;
+        display: inline-block;
+        margin: auto; 
+        padding-top: 20px;
+      }
     }
-  }
 
-  .right {
-    .make-sm-column(6);
-    #contact-top {
+    > #contact-top {
+      .make-sm-column(6);
       margin: auto;
       display: block;
       vertical-align: middle;

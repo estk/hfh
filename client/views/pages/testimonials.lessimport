@@ -1,8 +1,8 @@
 .testimonials {
   .testimonial {
     #effects > .raised;
-    // .make-sm-column(12);
-    margin: 30px;
+    .make-sm-column(12);
+    margin-bottom: 20px;
   }
   .signature {
     font-weight: bold;
