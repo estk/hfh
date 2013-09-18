@@ -1,10 +1,15 @@
 .carousel {
   #effects > .raised;
+  .make-sm-column(12);
   max-width: 1024px;
   margin: auto;
   margin-bottom: 30px;
 
-  .carousel-inner {
+  .spin-container {
+    #spinner {
+      .make-sm-column(12);
+      top: 50%;
+    }
   }
 
   .item {

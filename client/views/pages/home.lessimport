@@ -1,6 +1,6 @@
 #blurbs { margin: 0; }
 .blurb {
-  .make-md-column(4);
+  .make-sm-column(4);
   vertical-align: top;
   display: inline-block;
 }

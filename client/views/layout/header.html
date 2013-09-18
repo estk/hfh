@@ -1,14 +1,17 @@
 <template name="header">
 <header>
-  <a href="{{pathFor 'home'}}">
-    <span id="logo">Hastings Fine Homes</span>
-  </a>
-  <div id="contact-top">
-    <div>650.350.1066</div>
-    <div>925.838.0108</div>
-    <div>info@hastingsfinehomes.com</div>
+  <div id="logo">
+    <a href="{{pathFor 'home'}}">
+      <div>HastingsFineHomes</div>
+    </a>
   </div>
-  <div class="clear"></div>
-  {{> nav}}
+  <div class="right">
+    <div id="contact-top">
+      <div>650.350.1066</div>
+      <div>925.838.0108</div>
+      <div>info@hastingsfinehomes.com</div>
+    </div>
+    {{> nav}}
+  </div>
 </header>
 </template>

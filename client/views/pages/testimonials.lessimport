@@ -1,6 +1,7 @@
 .testimonials {
   .testimonial {
     #effects > .raised;
+    // .make-sm-column(12);
     margin: 30px;
   }
   .signature {

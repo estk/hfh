@@ -2,7 +2,9 @@
 {{#with photos}}
   <div class="carousel">
     {{#unless count}}
-      {{> spinner}}
+      <div class="spin-container">
+        {{> spinner}}
+      </div>
     {{else}}
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -12,12 +14,12 @@
       </ol>
 
       <div class="carousel-inner">
-        {{#each this}}
-          <div class="item">
+        {{#each_with_index this}}
+        <div class="item {{#if first index}}active{{/if}}">
             <img src="{{url_l}}" title="description"/>
             <div class="carousel-caption">{{description._content}}</div>
           </div>
-        {{/each}}
+        {{/each_with_index}}
       </div>
     {{/unless}}
   </div>

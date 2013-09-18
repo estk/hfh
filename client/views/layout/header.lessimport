@@ -1,24 +1,34 @@
 header {
   position: relative;
   margin-bottom: 20px;
+  font-size: 100%;
+  display: block;
   
-  span#logo {
+  > #logo {
+    .make-sm-column(6);
     text-transform: uppercase;
     vertical-align: middle;
-    display: inline-block;
-    font-size: 350%;
-    line-height: 1em;
-    margin: .25em 0;
-    color: black;
+    div {
+      width: 100%;
+      color: black;
+      font-size: 100%; /* set a fall-back size */
+      text-align: center;
+      line-height: 1;
+      display: inline-block;
+      margin: auto; 
+      padding-top: 20px;
+    }
   }
 
-  #contact-top {
-    float:right;
-    margin: auto;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: right;
-    padding: 0;
-    padding-top: 20px;
+  .right {
+    .make-sm-column(6);
+    #contact-top {
+      margin: auto;
+      display: block;
+      vertical-align: middle;
+      text-align: right;
+      padding: 0;
+      padding-top: 20px;
+    }
   }
 }
