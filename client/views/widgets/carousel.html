@@ -1,1 +1,26 @@
-<template name="carousel"></template>
+<template name="carousel">
+{{#with photos}}
+  <div class="carousel">
+    {{#unless count}}
+      {{> spinner}}
+    {{else}}
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {{#times count}}
+          <li data-target=".carousel" data-slide-to="{{this}}"></li>
+        {{/times}}
+      </ol>
+
+      <div class="carousel-inner">
+        {{#each this}}
+          <div class="item">
+            <img src="{{url_l}}" title="description"/>
+            <div class="carousel-caption">{{description._content}}</div>
+          </div>
+        {{/each}}
+      </div>
+    {{/unless}}
+  </div>
+{{/with}}
+</template>
+

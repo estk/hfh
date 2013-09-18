@@ -1,0 +1,16 @@
+.carousel {
+  width: 960px;
+  height: 500px;
+
+  .item {
+    .carousel-caption {
+      color: #FFF;
+      background: none;
+    }
+  }
+
+  #spinner {
+    vertical-align: middle;
+  }
+}
+

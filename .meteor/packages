@@ -19,3 +19,6 @@ iron-router
 analyticsjs
 tinytest
 less
+http
+collection-hooks
+spin

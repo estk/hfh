@@ -2,6 +2,9 @@
   "packages": {
     "fancybox": {},
     "iron-router": {},
-    "analyticsjs": {}
+    "analyticsjs": {},
+    "collection-hooks": {},
+    "spin": {},
+    "handlebar-helpers": {}
   }
 }
