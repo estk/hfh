@@ -1,6 +1,6 @@
 .carousel {
   #effects > .raised;
-  .make-sm-column(12);
+  .clearfix;
   max-width: 1024px;
   margin: auto;
   margin-bottom: 15px;
