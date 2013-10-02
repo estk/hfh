@@ -10,7 +10,6 @@ preserve-inputs
 underscore
 spiderable
 jquery
-force-ssl
 d3
 fancybox
 stylus
