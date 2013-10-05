@@ -1,4 +1,4 @@
-Templates.projects.helper({
+Template.projects.helpers({
   projects: function () {
     return [];
   }
