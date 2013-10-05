@@ -1,6 +1,6 @@
 Template.carousel.helpers({
   photos: function () {
-    return Photos.find();
+    return Photos.find({tags: 'home'});
   },
   first: function (i) {
     return i === 0;
