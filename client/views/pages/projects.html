@@ -1,11 +1,11 @@
 <template name="projects">
 <div id="projects">
-  {{#each project}}
+  {{#each projects}}
     <a class="project fancybox" rel="{{title}}" href="{{url}}">
       <img href="{{thumbnail}}" />
-      {{!-- Links for other photos in the set --}}
+      <!-- Links for other photos in the set. -->
       {{#each subphotos}}
-      <a href="{{url}}" class="fancybox"></a> {{!-- These should have display none --}}
+        <a href="{{url}}" class="fancybox"></a> {{!-- These should have display none --}}
       {{/each}}
     </a>
   {{/each}}
