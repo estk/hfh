@@ -3,7 +3,7 @@
 var _baseUrl = "http://api.flickr.com/services/rest/";
 var _apiKey = "f21b3b897a9c08dd4f07f00ca4fdc3f4";
 var _userId = "66318963@N07";
-var _extras = ["url_l","tags","description"];
+var _extras = ["url_l","url_s","tags","description"];
 var _params = {
   api_key: _apiKey,
   user_id: _userId,

@@ -1,38 +1,56 @@
+  var projectTags = ["1230hillsborough","123sancarlos","280hillsborough", "70losaltos"];
+
 Template.projects.helpers({
   projects: function () {
-    return [
-      {
-        thumbnail: "http://hello.com",
-        url: "http://hello.com",
-        subphotos: [
-          {
-            url: "http://hello.com",
-            description: "Blah"
-          }
-        ]
-      }
-    ];
+    var projects = _.map(projectTags, function(d, i){
+      var photos = Photos.find({tags: d}).fetch();
+      var pilot = _.find(photos, function(d,i){ return _.contains(d.tags, "pilot"); });
+      photos = photos.filter(function(d,i){ return ! _.contains(d.tags, "pilot"); });
+
+      return {
+              name: d,
+              pilot: pilot,
+              photos: photos
+      };
+    });
+    console.log(projects);
+    return projects;
   }
 });
 
-Template.carousel.rendered = function () {
+Template.projects.created = function () {
   // get photos
   var cb = function (err, res) {
     if (err) {
       console.log(err);
       return;
     }
-    // XXX: Correct?
+
     var photos = EJSON.parse(res.content).photos.photo;
     _.each(photos, function (p) {
+      p.tags = p.tags.split(' ');
       Photos.insert(p);
-    })
+    });
     console.log("Photos added!");
+    
   };
+
+  // collect photos into projects
+  function collectProjects() {
+    _.each(projectTags, function(d, i){
+      Flickr.getWithTags(d, cb)
+      Projects.insert({
+        name: d,
+        photoIds: Photos.find({tags: d})
+      });
+    })
+  }
+
+
   // XXX: Change to correct tags
-  var tags = "homan,blah,foo"
-  Flickr.getWithTags(tags, cb)
-
-  // XXX: Initialize fancybox?
-
+  collectProjects();
 }
+
+Template.projects.rendered = function () {
+  $('.fancybox').fancybox();
+};

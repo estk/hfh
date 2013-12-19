@@ -7,9 +7,9 @@ Router.map(function() {
 });
 
 Router.configure({
-  layout: 'layout',
+  layoutTemplate: 'layout',
 
-  renderTemplates: { 
+  yieldTemplates: { 
   /* render the templated named footer to the 'header' yield */
   'header': { to: 'header' },
   }

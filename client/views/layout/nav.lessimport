@@ -8,7 +8,7 @@ nav {
 
     li {
       .make-sm-column(2);
-      .make-sm-column-push(6);
+      .make-sm-column-push(4);
       list-style-type: none;
       font-weight: bold;
       text-align:center;

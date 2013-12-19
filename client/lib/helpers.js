@@ -6,19 +6,19 @@ Handlebars.registerHelper('times', function(n, block) {
 });
 
 Handlebars.registerHelper("each_with_index", function(array, fn) {
-	var buffer = "";
+  var buffer = "";
     if (! (array instanceof Array))
       array = array.fetch();
 
-	for (var i = 0, j = array.length; i < j; i++) {
-		var item = array[i];
+  for (var i = 0, j = array.length; i < j; i++) {
+    var item = array[i];
  
-		item.index = i;
+    item.index = i;
  
-		// show the inside of the block
-		buffer += fn(item);
-	}
+    // show the inside of the block
+    buffer += fn(item);
+  }
  
-	return buffer;
+  return buffer;
  
 });

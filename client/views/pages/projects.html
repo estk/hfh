@@ -1,11 +1,11 @@
 <template name="projects">
 <div id="projects">
   {{#each projects}}
-    <a class="project fancybox" rel="{{title}}" href="{{url}}">
-      <img href="{{thumbnail}}" />
+    <a class="project fancybox" rel="{{name}}" href="{{pilot.url_l}}">
+      <img src="{{pilot.url_s}}" />
       <!-- Links for other photos in the set. -->
-      {{#each subphotos}}
-        <a href="{{url}}" class="fancybox"></a> {{!-- These should have display none --}}
+      {{#each photos}}
+      <a rel={{../name}} href="{{url_l}}" class="fancybox"></a> 
       {{/each}}
     </a>
   {{/each}}

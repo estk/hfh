@@ -19,6 +19,7 @@ Template.carousel.rendered = function () {
     }
     var photos = EJSON.parse(res.content).photos.photo;
     _.each(photos, function (p) {
+      p.tags = p.tags.split(' ');
       Photos.insert(p);
     });
     console.log("Photos added!");
