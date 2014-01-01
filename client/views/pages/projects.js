@@ -2,16 +2,18 @@
 
 Template.projects.helpers({
   projects: function () {
-    var projects = _.map(projectTags, function(d, i){
+    var projects = []
+    _.each(projectTags, function(d, i){
       var photos = Photos.find({tags: d}).fetch();
       var pilot = _.find(photos, function(d,i){ return _.contains(d.tags, "pilot"); });
       photos = photos.filter(function(d,i){ return ! _.contains(d.tags, "pilot"); });
-
-      return {
-              name: d,
-              pilot: pilot,
-              photos: photos
-      };
+      
+      if (pilot)
+        projects.push({
+                name: d,
+                pilot: pilot,
+                photos: photos
+        });
     });
     console.log(projects);
     return projects;
