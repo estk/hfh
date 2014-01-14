@@ -13,7 +13,8 @@ Template.carousel.rendered = function () {
   
   // Get the photos
   var cb = function (err, res) {
-    if (err) {
+
+    if (err || EJSON.parse(res.content).stat === "fail") {
       console.log(err);
       return;
     }

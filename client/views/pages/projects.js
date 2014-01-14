@@ -23,7 +23,7 @@ Template.projects.helpers({
 Template.projects.created = function () {
   // get photos
   var cb = function (err, res) {
-    if (err) {
+    if (err || EJSON.parse(res.content).stat === "fail") {
       console.log(err);
       return;
     }
@@ -54,5 +54,5 @@ Template.projects.created = function () {
 }
 
 Template.projects.rendered = function () {
-  $('.fancybox').fancybox();
+  $('.fancybox').fancybox({});
 };

@@ -1,5 +1,6 @@
 nav {
   display: block;
+  overflow: hidden;
 
   ul {
     .make-row;
@@ -8,7 +9,7 @@ nav {
 
     li {
       .make-sm-column(2);
-      .make-sm-column-push(4);
+      .make-sm-column-push(2);
       list-style-type: none;
       font-weight: bold;
       text-align:center;

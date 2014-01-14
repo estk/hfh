@@ -5,11 +5,43 @@
   a { 
     display: inline-block;
     text-decoration: none;
-    }
+  }
   img {
     #effects > .raised;    
-    margin: 27px;
   }
   .project-photos { display: none; }
   .title, .fancybox-gallery { display:none; }
 }
+
+.fancybox-nav span {
+  visibility: visible !important;
+}
+
+.stack {
+  position: relative;
+  z-index: 10;
+  margin: 27px;
+}
+.stack:before, .stack:after { 
+  content: ""; 
+  border-radius: 3px; 
+  width: 260px;
+  height: 180px;
+  position: absolute; 
+  border: 10px solid #fff; 
+  left: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+
+  -webkit-transition: 0.3s all ease-out;
+  -moz-transition: 0.3s all ease-out;
+  transition: 0.3s all ease-out;
+}
+.stack:before { top: 4px; z-index: -1; }
+.stack:after { top: 8px; z-index: -2; }

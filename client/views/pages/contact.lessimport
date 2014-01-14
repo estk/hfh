@@ -8,9 +8,13 @@
     left: 0;
     height:100%;
     width:100%;
-    background-image: url("/images/sink.jpg");
     opacity: 0.2;
     z-index: 0;
+
+    > .strech {
+      height:100%;
+      width:100%;
+    }
   }
 
   > .contacts {
