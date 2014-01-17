@@ -25,7 +25,11 @@ Template.carousel.rendered = function () {
     });
     console.log("Photos added!");
   };
-  Flickr.getWithTags("home", cb);
+  if (typeof this.data !== 'string') {
+    Flickr.getWithTags("home", cb);
+  } else {
+    Flickr.getWithTags(this.data, cb);
+  }
 
   $('.carousel').carousel({
     interval: 5000

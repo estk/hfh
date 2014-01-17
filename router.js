@@ -4,6 +4,7 @@ Router.map(function() {
   this.route('contact');
   this.route('history');
   this.route('testimonials');
+  this.route('homan');
 });
 
 Router.configure({
