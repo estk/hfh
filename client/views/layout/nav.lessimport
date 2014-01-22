@@ -9,7 +9,7 @@ nav {
 
     li {
       .make-sm-column(2);
-      .make-sm-column-push(2);
+      .make-sm-column-push(0);
       list-style-type: none;
       font-weight: bold;
       text-align:center;

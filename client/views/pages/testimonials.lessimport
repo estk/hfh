@@ -1,4 +1,8 @@
 .testimonials {
+  .intro {
+    .make-sm-column(10);
+    .make-sm-column-push(1);
+  }
   .testimonial {
     #effects > .raised;
     .make-sm-column(12);
