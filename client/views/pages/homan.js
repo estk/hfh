@@ -1,1 +1,3 @@
 
+Template.homan.rendered = function() {
+}
