@@ -25,10 +25,13 @@ Template.carousel.rendered = function () {
     });
     console.log("Photos added!");
   };
+
   if (typeof this.data !== 'string') {
     Flickr.getWithTags("home", cb);
   } else {
-    Flickr.getWithTags(this.data, cb);
+    var tags = this.data;
+    tags = tags + ",-before,-after";
+    Flickr.getWithTags(tags, cb);
   }
 
   $('.carousel').carousel({
