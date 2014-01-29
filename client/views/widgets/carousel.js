@@ -1,6 +1,6 @@
 Template.carousel.helpers({
   photos: function () {
-    return Photos.find({tags: 'home'});
+    return Photos.find({tags: String(this)});
   },
   first: function (i) {
     return i === 0;
@@ -21,18 +21,15 @@ Template.carousel.rendered = function () {
     var photos = EJSON.parse(res.content).photos.photo;
     _.each(photos, function (p) {
       p.tags = p.tags.split(' ');
+      // console.log("tags:", p.tags);
       Photos.insert(p);
     });
     console.log("Photos added!");
   };
 
-  if (typeof this.data !== 'string') {
-    Flickr.getWithTags("home", cb);
-  } else {
-    var tags = this.data;
-    tags = tags + ",-before,-after";
-    Flickr.getWithTags(tags, cb);
-  }
+  var tags = this.data;
+  tags = tags + ",-before,-after";
+  Flickr.getWithTags(tags, cb);
 
   $('.carousel').carousel({
     interval: 5000
