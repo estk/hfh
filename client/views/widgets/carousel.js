@@ -31,8 +31,12 @@ Template.carousel.rendered = function () {
   tags = tags + ",-before,-after";
   Flickr.getWithTags(tags, cb);
 
-  $('.carousel').carousel({
+  var carousel = $('.carousel').carousel({
     interval: 5000
   });
   $('.carousel-indicators :first-child').addClass('active')
+
+  $('.carousel-inner').on('click', function (e) {
+    carousel.carousel('next');
+  });
 };
