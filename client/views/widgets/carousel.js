@@ -1,6 +1,16 @@
 Template.carousel.helpers({
   photos: function () {
-    return Photos.find({tags: String(this)});
+    var tags = String(this).split(','),
+        yes = tags.filter(function (t) { return t[0] !== '-'; }),
+        // no = [];
+        no = _.difference(tags, yes);
+
+    return Photos.find({
+      tags: {
+        $all: yes,
+        $not: {$in: no}
+      }
+    });
   },
   first: function (i) {
     return i === 0;
@@ -15,7 +25,7 @@ Template.carousel.rendered = function () {
   var cb = function (err, res) {
 
     if (err || EJSON.parse(res.content).stat === "fail") {
-      console.log(err);
+      console.error(err);
       return;
     }
     var photos = EJSON.parse(res.content).photos.photo;
@@ -24,11 +34,10 @@ Template.carousel.rendered = function () {
       // console.log("tags:", p.tags);
       Photos.insert(p);
     });
-    console.log("Photos added!");
+    console.debug("Photos added!");
   };
 
   var tags = this.data;
-  tags = tags + ",-before,-after";
   Flickr.getWithTags(tags, cb);
 
   var carousel = $('.carousel').carousel({
