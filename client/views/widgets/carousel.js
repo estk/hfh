@@ -2,15 +2,15 @@ Template.carousel.helpers({
   photos: function () {
     var tags = String(this).split(','),
         yes = tags.filter(function (t) { return t[0] !== '-'; }),
-        // no = [];
-        no = _.difference(tags, yes);
+        no = _.difference(tags, yes).map(function(s) {return s.slice(1);});
 
-    return Photos.find({
+    var ps = Photos.find({
       tags: {
         $all: yes,
         $not: {$in: no}
       }
     });
+    return ps;
   },
   first: function (i) {
     return i === 0;

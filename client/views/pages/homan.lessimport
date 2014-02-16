@@ -7,3 +7,40 @@
   vertical-align: top;
   display: inline-block;
 }
+
+.testimonials {
+  .intro {
+    .make-sm-column(10);
+    .make-sm-column-push(1);
+  }
+  .testimonial {
+    #effects > .raised;
+    .make-sm-column(12);
+    margin-bottom: 20px;
+  }
+  .signature {
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+.beforeafter {
+  h2 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: .5em;
+  }
+  article {
+    #effects > .raised;
+    .make-sm-column(12);
+    margin-bottom: 20px;
+    text-align: center;
+    vertical-align: middle;
+
+    img {
+      display: inline-block;
+      .make-sm-column(6);
+      padding: 2%;
+    }
+  }
+}
