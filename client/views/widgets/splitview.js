@@ -5,8 +5,10 @@ Template.splitview.helpers({
 
     var ps = Photos.find({
       tags: {$in: tags}
+    }).fetch();
+    return _.sortBy(ps, function (o) {
+      return _.contains(o.tags, "before") ? 0 : 1;
     });
-    return ps;
   }
 });
 

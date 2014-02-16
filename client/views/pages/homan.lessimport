@@ -35,10 +35,8 @@
     .make-sm-column(12);
     margin-bottom: 20px;
     text-align: center;
-    vertical-align: middle;
 
     img {
-      display: inline-block;
       .make-sm-column(6);
       padding: 2%;
     }
