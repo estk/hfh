@@ -19,6 +19,22 @@ window.Flickr = {
   },
 
   getWithTags: function (tags, cb) {
+    if (!cb) { cb = dcb }
+
+    function dcb (err, res) {
+
+      if (err || EJSON.parse(res.content).stat === "fail") {
+        console.error(err);
+        return;
+      }
+      var photos = EJSON.parse(res.content).photos.photo;
+      _.each(photos, function (p) {
+        p.tags = p.tags.split(' ');
+        Photos.insert(p);
+      });
+      console.debug("Photos added!");
+    }
+    
     var params = _.clone(_params);
 
     if (_.isArray(tags))

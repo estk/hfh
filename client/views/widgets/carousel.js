@@ -21,24 +21,8 @@ Template.carousel.rendered = function () {
   var spinWidth = $('.spin-container').width();
   $('.spin-container').height(spinWidth*2/3);
   
-  // Get the photos
-  var cb = function (err, res) {
-
-    if (err || EJSON.parse(res.content).stat === "fail") {
-      console.error(err);
-      return;
-    }
-    var photos = EJSON.parse(res.content).photos.photo;
-    _.each(photos, function (p) {
-      p.tags = p.tags.split(' ');
-      // console.log("tags:", p.tags);
-      Photos.insert(p);
-    });
-    console.debug("Photos added!");
-  };
-
   var tags = this.data;
-  Flickr.getWithTags(tags, cb);
+  Flickr.getWithTags(tags);
 
   var carousel = $('.carousel').carousel({
     interval: 5000
