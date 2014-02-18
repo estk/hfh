@@ -1,4 +1,5 @@
 Template.splitview.helpers({
+  banum: function(){return this;},
   photos: function () {
     var num = String(this),
         tags = makeTags(num);
@@ -6,9 +7,15 @@ Template.splitview.helpers({
     var ps = Photos.find({
       tags: {$in: tags}
     }).fetch();
-    return _.sortBy(ps, function (o) {
+    ps = _.sortBy(ps, function (o) {
       return _.contains(o.tags, "before") ? 0 : 1;
     });
+    var minheight = _.min(_.pluck(ps, 'height_n'));
+    return {
+      before: ps[0],
+      after: ps[1],
+      minheight: minheight
+    };
   }
 });
 
@@ -17,6 +24,8 @@ Template.splitview.rendered = function() {
       tags = makeTags(num);
 
   Flickr.getWithTags(tags);
+
+  $('.fancybox').fancybox({});
 };
 
 function makeTags (num) {

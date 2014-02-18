@@ -35,10 +35,15 @@
     .make-sm-column(12);
     margin-bottom: 20px;
     text-align: center;
-
-    img {
+    
+    .container {
       .make-sm-column(6);
-      padding: 2%;
+      overflow: hidden;
+      img {
+      }
+      margin-top: 2%;
+      margin-bottom: 2%;
     }
+    
   }
 }

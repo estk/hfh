@@ -1,7 +1,10 @@
 .testimonials {
   .intro {
+    font-size: 125%;
     .make-sm-column(10);
     .make-sm-column-push(1);
+    margin-bottom: 30px;
+    margin-top: 20px;
   }
   .testimonial {
     #effects > .raised;
