@@ -19,23 +19,23 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.1",
-        "commit": "4e1ee0581d68bff422a915dacb0bd30eae10fe08"
+        "tag": "v0.6.2",
+        "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
       },
       "analyticsjs": {
         "git": "https://github.com/nate-strauser/meteor-analyticsjs.git",
-        "tag": "v0.1.2",
-        "commit": "aded6d80df1f801d02076adbb3d64685ebb00f00"
+        "tag": "v0.1.3",
+        "commit": "a4d3451eb4ba701798dfbc089cc753ebc81487b5"
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
-        "tag": "v0.6.0",
-        "commit": "b563164c78d5ab4ad2258ce06736af6d4f0f33ba"
+        "tag": "v0.6.2",
+        "commit": "29484b2110206be93b01c6d11ce06ec9208de7bd"
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
-        "tag": "v0.2.0",
-        "commit": "fd3a2871a69442848b4b4e74f5e1ae28fa4a95a4"
+        "tag": "v0.2.2",
+        "commit": "3f655f0016228e4195acc784c45d3e3a247dc39f"
       },
       "handlebar-helpers": {
         "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
@@ -44,8 +44,8 @@
       },
       "bootstrap3-less": {
         "git": "https://github.com/eprochasson/bootstrap3-less",
-        "tag": "v0.1.5",
-        "commit": "5074432c020ffc7a676a812e92104ce0fa96080f"
+        "tag": "v0.1.8",
+        "commit": "48b6db4435d9f01a1fcfe694a180b38e8e38835b"
       },
       "fittext": {
         "git": "https://github.com/dbubs/meteor-fittext.git",
