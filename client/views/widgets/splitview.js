@@ -10,7 +10,9 @@ Template.splitview.helpers({
     ps = _.sortBy(ps, function (o) {
       return _.contains(o.tags, "before") ? 0 : 1;
     });
-    var minheight = _.min(_.pluck(ps, 'height_n'));
+    var heights = _.pluck(ps, 'height_m');
+    heights.push("250");
+    var minheight = _.min( heights );
     return {
       before: ps[0],
       after: ps[1],
