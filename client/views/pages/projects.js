@@ -1,57 +1,48 @@
-  var projectTags = ["1230hillsborough","123sancarlos","280hillsborough", "70losaltos"];
+  var projectTags = ["1230hillsborough","123sancarlos","70losaltos"];
 
 Template.projects.helpers({
   projects: function () {
     var projects = []
-    _.each(projectTags, function(d, i){
-      var photos = Photos.find({tags: d}).fetch();
-      var pilot = _.find(photos, function(d,i){ return _.contains(d.tags, "pilot"); });
-      photos = photos.filter(function(d,i){ return ! _.contains(d.tags, "pilot"); });
-      
-      if (pilot)
+
+    // heavy construction
+    _.each(projectTags, function(tgs, i){
+      var tags = String(tgs).split(','),
+          yes = tags.filter(function (t) { return t[0] !== '-'; }),
+          no = _.difference(tags, yes).map(function(s) {return s.slice(1);});
+
+      // console.log("yes: " + yes, "no: " + no);
+
+      var photos = Photos.find({
+        tags: {
+          $all: yes,
+          $not: {$in: no}
+        }
+      }).fetch();
+
+      // if (!! photos[0]) console.log(photos[0]);
+      var pilot = _.find(photos, function(d){ return _.contains(d.tags, "pilot"); });
+      photos = photos.filter(function(d){ return ! _.contains(d.tags, "pilot"); });
+
+      // There needs to be a pilot.
+      if (!! pilot) {
         projects.push({
-                name: d,
-                pilot: pilot,
-                photos: photos
+          name: tgs,
+          pilot: pilot,
+          photos: photos
         });
+      }
     });
-    console.log(projects);
+    // console.log(projects);
     return projects;
   }
 });
 
 Template.projects.created = function () {
-  // get photos
-  var cb = function (err, res) {
-    if (err || EJSON.parse(res.content).stat === "fail") {
-      console.log(err);
-      return;
-    }
-
-    var photos = EJSON.parse(res.content).photos.photo;
-    _.each(photos, function (p) {
-      p.tags = p.tags.split(' ');
-      Photos.insert(p);
-    });
-    console.log("Photos added!");
-    
-  };
-
-  // collect photos into projects
-  function collectProjects() {
-    _.each(projectTags, function(d, i){
-      Flickr.getWithTags(d, cb)
-      Projects.insert({
-        name: d,
-        photoIds: Photos.find({tags: d})
-      });
-    })
-  }
-
-
-  // XXX: Change to correct tags
-  collectProjects();
-}
+  _.each(projectTags, function(d){
+    // console.log("requesting " + d + " from flickr ");
+    Flickr.getWithTags(d);
+  });
+};
 
 Template.projects.rendered = function () {
   $('.fancybox').fancybox({});
