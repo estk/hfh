@@ -2,10 +2,10 @@
 
 Template.projects.helpers({
   projects: function () {
-    var projects = []
+    var projects = [];
 
     // heavy construction
-    _.each(projectTags, function(tgs, i){
+    _.each(projectTags, function(tgs){
       var tags = String(tgs).split(','),
           yes = tags.filter(function (t) { return t[0] !== '-'; }),
           no = _.difference(tags, yes).map(function(s) {return s.slice(1);});

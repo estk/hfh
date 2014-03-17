@@ -8,22 +8,6 @@
   display: inline-block;
 }
 
-.testimonials {
-  .intro {
-    .make-sm-column(10);
-    .make-sm-column-push(1);
-  }
-  .testimonial {
-    #effects > .raised;
-    .make-sm-column(12);
-    margin-bottom: 20px;
-  }
-  .signature {
-    font-weight: bold;
-    color: #000;
-  }
-}
-
 .beforeafter {
   h2 {
     text-align: center;
